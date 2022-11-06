@@ -1,0 +1,16 @@
+{
+    "liveSassCompile.settings.autoprefix": [
+    
+    ],
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "/css",
+            "savePathSegmentKeys": null,
+            "savePathReplaceSegmentsWith": null
+        }
+    ],
+    "liveSassCompile.settings.includeItems": [
+    ],
+}

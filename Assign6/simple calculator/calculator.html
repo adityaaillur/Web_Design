@@ -1,0 +1,130 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <meta charset="windows-1252">
+    <title> Simple Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- <link rel="stylesheet" href="index.html"> -->
+
+</head>
+
+<body>
+<header>
+    <h0 id="headerText"></h1>
+</header>
+    <section>
+
+        <br>
+        <div id="container1">
+
+            <h1>Simple Calculator</h1>
+            <label>Enter your input 1:</label>
+            <input type="text" id="a" name="option" onblur="validateInputs(this, 1, 'in1')" />
+            <br>
+            <div id="errorMsgin1" style="display: none; color:red;">
+                Invalid Entry, Please enter only numbers
+                <br> <br>
+            </div>
+
+            <br><br>
+            <label>Enter your input 2:</label>
+            <input type="text" id="b" name="task" onblur="validateInputs(this, 2, 'in2')" />
+            <div id="errorMsgin2" style="display: none; color:red;">
+                Invalid Entry, Please enter only numbers
+                <br> <br>
+            </div>
+
+            <br><br>
+
+            <input id="submitadd" type="button" value="Add">
+            <input id="submitSubtract" type="button" value="Subtract">
+            <input id="submitMultiply" type="button" value="Multiply">
+            <input id="submitDivide" type="button" value="Divide">
+
+          
+            <br><br>
+            <label>Result:</label>
+            <input type="text" disabled="disabled" id="result">
+        </div>
+    </section>
+    <script>
+        $(document).ready(function () {
+            var username = window.sessionStorage.getItem("username");
+            console.log(username);
+
+            $("#headerText").html("Welcome " + sessionStorage.getItem("username")); 
+            $("#submitadd").on("click", function () {
+                var a = parseInt($('#a').val());
+                var b = parseInt($('#b').val());
+                var sum = (a, b) => (a + b);
+
+                $("#result").val(a + b);
+            });
+
+            $("#submitSubtract").on("click", function () {
+                var a = parseInt($('#a').val());
+                var b = parseInt($('#b').val());
+                var sum = (a, b) => (a - b);
+                $("#result").val(a - b);
+
+            });
+
+            $("#submitMultiply").on("click", function () {
+                var a = parseInt($('#a').val());
+                var b = parseInt($('#b').val());
+                var sum = (a, b) => (a * b);
+                $("#result").val(a * b);
+
+            });
+
+            $("#submitDivide").on("click", function () {
+                var a = parseInt($('#a').val());
+                var b = parseInt($('#b').val());
+                var sum = (a, b) => (a / b);
+                $("#result").val(a / b);
+            });
+        });
+
+        function validateInputs(object, type, nameType) {
+            var pattern = /^[0-9]+$/;
+            var name = "errorMsg" + nameType;
+            switch (type) {
+                case 1:
+                    if (!object.value.trim().match(pattern)) {
+                        object.style.border = "2px solid #F90A0A";
+                        document.getElementById(name).style.display = "block";
+                        object.value = "";
+                    }
+                    else {
+                        object.style.border = "";
+                        document.getElementById(name).style.display = "none";
+                    }
+                    break;
+
+                case 2:
+                    if (!object.value.trim().match(pattern)) {
+                        object.style.border = "2px solid red";
+                        document.getElementById(name).style.display = "block";
+                        object.value = "";
+                    }
+                    else {
+                        object.style.border = "";
+                        document.getElementById(name).style.display = "none";
+                    }
+                    break;
+            }
+        }
+
+    </script>
+    
+<link rel="stylesheet" href="./arrow.js">
+</body>
+
+</html>

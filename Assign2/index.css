@@ -1,0 +1,133 @@
+body{
+    background-image: url("/images/bg1.jpg");
+    width: 100%;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper{
+    width: 85%;
+    margin: auto;
+    background-color:rgb(157, 156, 153);
+    opacity: 0.8;
+}
+
+header{
+    text-align: center;
+    background-color:white;
+    opacity: 1;
+}
+
+header h1{
+    padding: 10px;
+    margin: 0px;
+    color: rgb(3, 3, 3);
+}
+
+nav{
+    float: left;
+    width:150px;
+    padding: 10px;
+    position: fixed;
+}
+
+nav ul li{
+    list-style: none;
+    padding: 20px 0px;
+}
+
+nav ul li a{
+    color: rgb(33, 33, 33);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    list-style: none;
+}
+
+ul li a:hover{
+    color: rgb(255, 196, 78);
+    transform: 0.3s;
+}
+
+nav ul{
+    padding-left: 10px;
+}
+
+main{
+    margin-left: 150px;
+    padding: 10px;
+    background-color: #ffffff80;
+    overflow: auto;
+}
+footer{
+    text-align: center;
+    font-style: oblique;
+    background-color:aliceblue;
+    padding: 2px;
+}
+
+p{
+    text-indent:5em;
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+footer p{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.content h1 {
+    margin-top: 5%;
+    font-size: 52px;
+    margin-left: 230px;
+    margin-bottom: 0px;
+
+}
+
+.content h3{
+    margin-left: 250px;
+    margin-top: 0%;
+    margin-bottom: 0px;
+}
+
+.content h4{
+    margin-left: 367px;
+    margin-top: 0%;
+    margin-bottom: 5px;
+}
+
+.content p{
+    margin-left: 190px;
+    margin-top: 3px;
+    margin-bottom: 2%;
+}
+
+button{
+    font-weight: bold;
+    font-size: larger;
+    font-family: Poppins, sans-serif;
+    padding: 9px 25px;
+    color: black;
+    background-color: rgb(255, 196, 78);
+    border-radius: 30px;
+    margin-left: 407px;
+    margin-bottom: 10%;
+    border: none;
+    outline: none;
+}
+
+button:hover{
+    color: rgb(255, 254, 252);
+    transform: 0.3s;
+}
+
+@media screen and (max-width:390px){
+    .content *{
+        margin-left: 2px !important;
+    }
+    .content h1 {
+        font-size: 30px;
+    }
+}

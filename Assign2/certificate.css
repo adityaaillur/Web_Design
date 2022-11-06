@@ -1,0 +1,121 @@
+body{
+    background-image: url("/images/bg1.jpg");
+    width: 100%;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper{
+    width: 85%;
+    margin: auto;
+    background-color:rgb(157, 156, 153);
+    opacity: 0.8;
+}
+
+header{
+    text-align: center;
+    background-color:white;
+    opacity: 1;
+}
+
+header h1{
+    padding: 10px;
+    margin: 0px;
+    color: rgb(3, 3, 3);
+}
+
+nav{
+    float: left;
+    width:150px;
+    padding: 10px;
+    position: fixed;
+}
+
+nav ul li{
+    list-style: none;
+    padding: 20px 0px;
+}
+
+nav ul li a{
+    color: rgb(33, 33, 33);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    list-style: none;
+}
+
+ul li a:hover{
+    color: rgb(255, 196, 78);
+    transform: 0.3s;
+}
+
+nav ul{
+    padding-left: 10px;
+}
+
+main{
+    margin-left: 150px;
+    padding: 10px;
+    background-color: #ffffff80;
+    overflow: auto;
+}
+footer{
+    text-align: center;
+    font-style: oblique;
+    background-color:aliceblue;
+    padding: 2px;
+}
+
+p{
+    text-indent:5em;
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+footer p{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+.gallery { 
+    position: relative; 
+    margin-bottom: 500px;
+
+}
+.gallery ul { width: 250px; 
+             list-style-type: none;
+             flex-wrap: wrap;
+            }
+
+.gallery li { 
+    /* display: inline;  */
+              /* float: left;  */
+			  padding: 10px; }
+.gallery img { border-style: none; }
+.gallery a { text-decoration: none; 
+             color: #333; 
+			 font-style: italic; }
+
+.gallery span { display: none; }    
+.gallery a:hover span { display: block; 
+                        position: absolute;
+					    top: 10px; 
+						left: 300px; 
+						text-align: center; }
+
+@media screen and (max-width: 390px) {
+    .gallery li{
+        /* display: inline;  */
+              /* float: left;  */
+			  padding: 2px; 
+    }
+    .gallery ul { width: 250px; 
+        list-style-type: none;
+        flex-wrap: wrap;
+        padding-left: 1rem;
+       }
+}
+    
