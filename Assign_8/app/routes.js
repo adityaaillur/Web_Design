@@ -24,12 +24,12 @@ module.exports = (app) => {
         }
         else if( !email.trim().match(emailRegEx)){
             res.status(400);
-            res.json("use proper northeastern email id");
+            res.json("Please provide Valid Northeastern Email");
         }
 
         else if(!password.trim().match(passwordRegEx)){
             res.status(400);
-            res.json("use strong password ");
+            res.json("Please Use Strong Password ");
         }
         
         else{
@@ -58,7 +58,7 @@ module.exports = (app) => {
         try{
         if(!password.trim().match(passwordRegEx)){
             res.status(400);
-            res.json("Use strong password ");
+            res.json("Please Use Strong Password ");
         return res.send();
         }
     }catch(error){
@@ -68,8 +68,8 @@ module.exports = (app) => {
         let newname = req.body.name;
         const user = await Sample.findOne({ email: email });
         if(user==null){
-            console.log("User doesn't exist")
-            res.json({"message":"User doesn't exist!! Check the email again"});
+            console.log("This user does not exist")
+            res.json({"message":"User doesn't exist!! Please recheck the email "});
             return;
         }
         
@@ -86,7 +86,7 @@ module.exports = (app) => {
                 
                 if(doc == null){
                     res.status(400);
-                    res.json("User doesn't exist");
+                    res.json("This user does not exist");
                 }
                 else{
                     res.json("Updated successfully");
@@ -128,7 +128,7 @@ module.exports = (app) => {
             }
             if(doc == null){
                 res.status(400);
-                res.json("user doesn't exist");
+                res.json("This user doesn't exist");
                 return res.send();
             }
         
@@ -142,7 +142,7 @@ module.exports = (app) => {
         }
         ); 
     }catch(error){
-        res.json({"message":"User doesn't exist"});
+        res.json({"message":"This user doesn't exist"});
         return res.send();
     }
     });
