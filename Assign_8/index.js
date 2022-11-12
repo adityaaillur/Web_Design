@@ -8,11 +8,10 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const routes = require('./app/routes');
 
-
-const dbconnecturl = "mongodb+srv://Aditya:aditya@aditya.jdepu8b.mongodb.net/Aditya?retryWrites=true&w=majority";
+const dburl = "mongodb+srv://Aditya:Illur@cluster0.k4mvtlk.mongodb.net/?retryWrites=true&w=majority"
 
 //connect mongodb
-mongoose.connect(dbconnecturl,{ 
+mongoose.connect(dburl,{ 
     useNewUrlParser: true, 
     useUnifiedTopology: true,
     useCreateIndex: true
