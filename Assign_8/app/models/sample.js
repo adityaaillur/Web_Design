@@ -46,7 +46,6 @@ UserSchema.pre('save', async function (next) {
     }
   }
 
-  
 
   const User = mongoose.model('illur', UserSchema);
   module.exports = User;

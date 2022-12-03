@@ -1,0 +1,154 @@
+<!-- Aditya Ashok Illur -->
+<!-- 002776756 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Registration Form</title>
+   <link rel="stylesheet" type="text/css" href="style.css">
+   <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+</head>
+
+<body>
+   <div class="container">
+      <h1>REGISTER</h1>
+      <form id="registration_form">
+         <div>
+            <input type="text" id="form_fname" name="username" required="">
+            <span class="error_form" id="fnameerr_msg"></span>
+            <label>
+               User Name
+            </label>
+         </div>
+
+         <div>
+            <input type="text" id="form_email" name="email" required="">
+            <span class="error_form" id="emailerr_msg"></span>
+            <label>Email id</label>
+         </div>
+         <div>
+            <input type="password" id="formpass" name="" required="">
+            <span class="error_form" id="passerr_msg"></span>
+            <label>Password</label>
+         </div>
+
+
+         <input type="submit" id="sbmt" value="Register" name="">
+
+
+      </form>
+
+
+   </div>
+
+   </div>
+
+
+   <script type="text/javascript">
+      $(function () {
+
+         $("#fnameerr_msg").hide();
+         $("#sname_error_message").hide();
+         $("#emailerr_msg").hide();
+         $("#passerr_msg").hide();
+         $("#retype_passerr_msg").hide();
+
+         var err_fname = false;
+         var error_email = false;
+         var error_password = false;
+         var error_retype_password = false;
+
+         $("#form_fname").focusout(function () {
+            check_firstname();
+         });
+
+         $("#form_email").focusout(function () {
+            check_email();
+         });
+         $("#formpass").focusout(function () {
+            check_password();
+         });
+         $("#form_retype_password").focusout(function () {
+            check_retype_password();
+         });
+
+         function check_firstname() {
+            var pattern = /^[a-zA-Z]*$/;
+            var firstname = $("#form_fname").val();
+            if (pattern.test(firstname) && firstname !== '') {
+               $("#fnameerr_msg").hide();
+            } else {
+               $("#fnameerr_msg").html("Enter only Characters");
+               $("#fnameerr_msg").show();
+               err_fname = true;
+            }
+         }
+
+
+
+         function check_password() {
+            var password_length = $("#formpass").val().length;
+            if (password_length < 6) {
+               $("#passerr_msg").html("Must contain Minimum 6 Characters");
+               $("#passerr_msg").show();
+               error_password = true;
+            } else {
+               $("#passerr_msg").hide();
+            }
+         }
+
+
+
+         function check_email() {
+            var pattern = /([\w\.]+)\.([\w\.]+)@northeastern\.edu/;
+            var email = $("#form_email").val();
+            if (pattern.test(email) && email !== '') {
+               $("#emailerr_msg").hide();
+            } else {
+               $("#emailerr_msg").html("Invalid Email, Please enter full ID");
+               $("#emailerr_msg").show();
+               error_email = true;
+            }
+         }
+
+         $("#registration_form").submit(function () {
+            err_fname = false;
+            error_email = false;
+            error_password = false;
+
+
+            check_firstname();
+            check_email();
+            check_password();
+
+
+            if (err_fname === false && error_email === false && error_password === false) {
+               alert("Successfull");
+
+               var firstname = $("#form_fname").val();
+               
+               window.sessionStorage.setItem("username", firstname);
+
+               var url = "calculator.html";
+               $(location).attr('href', url);
+               window.location.href = url;
+
+               return false;
+            }
+            else {
+               alert("Please Fill the form Correctly");
+            }
+
+         });
+      });
+
+
+
+   </script>
+</body>
+
+</html>
